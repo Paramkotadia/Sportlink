@@ -1,1 +1,72 @@
+backend
+/* Backend: Java Spring Boot API for SportLink */
+
+package com.sportlink;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SportLinkApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(SportLinkApplication.class, args);
+    }
+}
+
+// Controller to handle API requests for different sections
+package com.sportlink.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api")
+public class SportLinkController {
+
+    @GetMapping("/section1/main")
+    public String getSection1Main() {
+        return "{\"message\": \"Section 1 Main Content Loaded Successfully!\"}";
+    }
+    
+    @GetMapping("/section1/profile")
+    public String getProfile() {
+        return "{\"message\": \"Profile data loaded successfully!\"}";
+    }
+    
+    @GetMapping("/section2")
+    public String getSection2() {
+        return "{\"message\": \"Section 2 (Horizontal Scroll) Loaded Successfully!\"}";
+    }
+    
+    @GetMapping("/section3/main")
+    public String getSection3Main() {
+        return "{\"message\": \"Section 3 Main Loaded Successfully!\"}";
+    }
+    
+    @GetMapping("/section3/search")
+    public String getSearchData() {
+        return "{\"message\": \"Search results loaded successfully!\"}";
+    }
+    
+    @GetMapping("/section3/connect")
+    public String getConnectData() {
+        return "{\"message\": \"Connection data loaded successfully!\"}";
+    }
+    
+    @GetMapping("/section4/main")
+    public String getSection4Main() {
+        return "{\"message\": \"Section 4 Main Loaded Successfully!\"}";
+    }
+    
+    @GetMapping("/section4/explore1")
+    public String getExploreData1() {
+        return "{\"message\": \"Explore Section 1 Loaded Successfully!\"}";
+    }
+    
+    @GetMapping("/section4/explore2")
+    public String getExploreData2() {
+        return "{\"message\": \"Explore Section 2 Loaded Successfully!\"}";
+    }
+}
 
